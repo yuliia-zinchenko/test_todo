@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Task } from "../../types/task.types";
 import { TodosResponse, GetTodosParams } from "../../types/api.types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const DEFAULT_LIMIT = 10;
 
 export const api = createApi({
