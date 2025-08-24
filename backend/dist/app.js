@@ -5,7 +5,7 @@ const buildApp = () => {
     const app = Fastify();
     app.register(todoRoutes, { prefix: "api/todos" });
     app.register(fastifyCors, {
-        origin: "http://localhost:3000",
+        origin: "https://test-todos.onrender.com",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     });
     app.setErrorHandler((error, request, reply) => {
