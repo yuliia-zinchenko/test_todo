@@ -4,11 +4,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "prisma migrate deploy && node dist/server.js",
     "build": "tsc",
     "dev": "nodemon",
-    "postinstall": "prisma generate && prisma migrate deploy"
-  },
+    "postinstall": "prisma generate"
+  },  
   "keywords": [],
   "author": "",
   "license": "ISC",
