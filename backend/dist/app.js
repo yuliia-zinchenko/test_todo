@@ -7,6 +7,7 @@ const buildApp = () => {
     app.register(fastifyCors, {
         origin: "https://test-todos.onrender.com/",
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+        allowedHeaders: ["Content-Type", "Authorization"],
     });
     app.setErrorHandler((error, request, reply) => {
         console.error(error);
