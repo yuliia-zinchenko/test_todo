@@ -5,13 +5,13 @@ import fastifyCors from "@fastify/cors";
 const buildApp = () => {
   const app = Fastify();
 
-  app.register(todoRoutes, { prefix: "api/todos" });
-
   app.register(fastifyCors, {
-    origin: "https://test-todos.onrender.com/",
+    origin: "https://test-todos.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
   });
+
+  app.register(todoRoutes, { prefix: "api/todos" });
 
   app.setErrorHandler((error, request, reply) => {
     console.error(error);
